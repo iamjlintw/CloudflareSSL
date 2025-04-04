@@ -1,3 +1,4 @@
 # 排除虛擬環境資料夾
 cfvenv/
-
+.idea/
+.env
