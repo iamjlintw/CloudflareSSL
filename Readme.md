@@ -19,21 +19,26 @@
 - **Python 3.6+**
 
 ### 必要套件
-- **Certbot 與 Cloudflare DNS 外掛**  
-  安裝範例（Debian/Ubuntu）：
-  ```bash
-  sudo apt-get update
-  sudo apt-get install certbot python3-certbot-dns-cloudflare
-  ```
+- **Certbot 與 Cloudflare DNS 外掛** (將由安裝腳本自動安裝)
+- **python-dotenv 模組** (將由安裝腳本自動安裝)
 
-- **python-dotenv 模組**
-  ```bash
-  pip install python-dotenv
-  ```
+> 注意：這些套件會由安裝流程中的 `install.sh` 腳本自動處理，通常無需手動安裝
 
-### Cloudflare API Token
-請至 Cloudflare 儀表板 → My Profile → API Tokens  
-建立自訂 Token，權限至少設定為 Zone → DNS:Edit（限定指定網域，如 ddd.com）
+### Cloudflare API Token 創建步驟
+1. 登入 [Cloudflare 儀表板](https://dash.cloudflare.com)
+2. 點擊右上角個人資料圖示 → 「My Profile」 → 「API Tokens」
+3. 點擊「Create Token」→「Get Started」
+4. 設定權限：
+   - 選擇「Zone」→「DNS」→「Edit」
+5. 設定資源：
+   - 選擇「Include」→「Specific Zone」→ 輸入您的網域名稱（如 ddd.com）
+6. 點擊「Continue to summary」→「Create Token」
+7. 妥善保存產生的 API Token（將用於 Certbot 設定）
+
+注意事項：
+- 此 Token 僅需 DNS 編輯權限
+- 請限定 Token 僅能存取指定網域
+- 建議將 Token 權限設為最低必要權限
 
 ## 安裝流程
 
