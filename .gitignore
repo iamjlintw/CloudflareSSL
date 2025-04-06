@@ -2,3 +2,4 @@
 cfvenv/
 .idea/
 .env
+cloudflare.ini

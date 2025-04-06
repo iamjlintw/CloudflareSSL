@@ -43,9 +43,12 @@
 ## 安裝流程
 
 1. 下載並執行安裝腳本
-   ```bash
-   chmod +x install.sh
-   ./install.sh
+```bash
+# 先退出 conda base 環境
+conda deactivate
+
+# 執行安裝腳本
+source ./install.sh
    ```
    此腳本將自動：
    - 更新系統套件
