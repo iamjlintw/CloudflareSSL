@@ -1,4 +1,3 @@
-#!/bin/bash
 set -e
 
 # 取得作業系統名稱
@@ -65,6 +64,8 @@ pip install --upgrade pip
 pip install python-dotenv
 
 echo "=== 安裝完成 ==="
-echo "請依照 README.md 說明，設定 .env 檔案後，使用以下指令進入虛擬環境並執行程式："
-echo "  source $VENV_DIR/bin/activate"
+echo "虛擬環境已啟動，現在您可以直接執行："
 echo "  python get_cert.py"
+
+# 啟動一個新的 shell，並自動執行 activate 命令
+exec "$SHELL"
